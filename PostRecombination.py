@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 from scipy.integrate import cumtrapz
 from scipy.interpolate import interp1d
-import TC_only as TC
+import TightCoupling as TC
 import imageio
 import pickle
 
