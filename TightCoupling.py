@@ -124,13 +124,6 @@ def R_(a):
 def R(x):
     return (4./3.) * Omega_r_0 / (Omega_b_0 * np.exp(x))
     
-# Sound speed squared (can we make a simpler approx. at radiation domination?)
-#def c_s_2(a):
-    #da = 0.0001
-    #mu = 2./3. #check this
-    #cs2 = k_B * T_b / mu * (1. - (1./3.) * (np.log(T_b(a)) - np.log(T_b(a - da))) / (np.log(a) - np.log(H(a)*a)) 
-#    cs2 = (1./3.) * c #approx
-#    return cs2
 
 #Optical depth: we use an analytic approximation for early times and interpolate from pre-calculated results for later times
 
