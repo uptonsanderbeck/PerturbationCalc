@@ -115,14 +115,6 @@ def R_(a):
 def R(x):
     return (4./3.) * Omega_r_0 / (Omega_b_0 * np.exp(x))
     
-# Sound speed squared (can we make a simpler approx. at radiation domination?)
-#def c_s_2(a):
-    #da = 0.0001
-    #mu = 2./3. #check this
-    #cs2 = k_B * T_b / mu * (1. - (1./3.) * (np.log(T_b(a)) - np.log(T_b(a - da))) / (np.log(a) - np.log(H(a)*a)) 
-#    cs2 = (1./3.) * c #approx
-#    return cs2
-
 #Optical depth: we use an analytic approximation for early times and interpolate from pre-calculated results for later times
 
 #These tables are x,log10(tau)
@@ -217,7 +209,6 @@ z_BBN = 4e8
 
 
 for i in range(len(k_vals)):
-    print(i)
     k_new = k_vals[i]/Mpc_in_cm
     x_switch = TC.TC_end(k_new,x_arrs_)
     T_C = TC.setup_for_post_TC(x_start,x_arrs_,k_new)
@@ -234,15 +225,15 @@ for i in range(len(k_vals)):
     x_k_array_mod[i] = x_arrs_
 
 
-file_add = "DMdelta"
+file_add = "file1"
 
-file = open("db_k_array_" + file_add + ".dat", "wb")
-pickle.dump(db_k_array_mod, file)
-file.close()
+file_b = open("db_k_array_" + file_add + ".dat", "wb")
+pickle.dump(db_k_array_mod, file_b)
+file_b.close()
 
-file2 = open("dm_k_array_" + file_add + ".dat", "wb")
-pickle.dump(dm_k_array_mod, file2)
-file2.close()
+file_m = open("dm_k_array_" + file_add + ".dat", "wb")
+pickle.dump(dm_k_array_mod, file_m)
+file_m.close()
 
 
 file_x = open("x_k_array_" + file_add + ".dat", "wb")
